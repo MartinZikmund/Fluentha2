@@ -1,10 +1,13 @@
-# Fluentha
+# Fluentha2
 
 A Windows 11 / WinUI 3 **Fluent Design** theme for Home Assistant: Mica-style background, layered 8px cards with a
 1px hairline stroke instead of shadows, Segoe UI Variable typography on the Fluent type ramp, and the Windows default
 accent blue. One theme, light and dark built in.
 
 ![Screenshot placeholder](docs/screenshot.png)
+
+The theme is called `Fluentha2` so it can sit next to the original
+[Fluentha](https://github.com/MartinZikmund/Fluentha) without a name clash.
 
 ## Why another one
 
@@ -35,22 +38,22 @@ accent blue. One theme, light and dark built in.
    ```
 2. HACS (or the Marketplace on 2026.11+) > three-dot menu > **Custom repositories** > add
    `https://github.com/MartinZikmund/Fluentha2`, category **Theme**.
-3. Download **Fluentha**, then run the `frontend.reload_themes` action (or restart).
+3. Download **Fluentha2**, then run the `frontend.reload_themes` action (or restart).
 
 ### Manual
 
-Copy `themes/fluentha.yaml` into `/config/themes/` and reload themes.
+Copy `themes/fluentha2.yaml` into `/config/themes/` and reload themes.
 
 ## Use
 
-- **Everywhere:** Profile > Theme > **Fluentha**. Light/dark follows the profile's mode switch.
+- **Everywhere:** Profile > Theme > **Fluentha2**. Light/dark follows the profile's mode switch.
 - **One view only** (great for a wall tablet):
   ```yaml
   views:
     - title: Tablet
-      theme: Fluentha
+      theme: Fluentha2
   ```
-- **As the default:** `frontend.set_theme` with `name: Fluentha` (and `mode: dark` for the dark default).
+- **As the default:** `frontend.set_theme` with `name: Fluentha2` (and `mode: dark` for the dark default).
 
 ## Notes
 
