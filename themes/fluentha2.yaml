@@ -4,10 +4,11 @@
 # the WinUI name is noted where the mapping isn't obvious.
 
 Fluentha2:
-  # ---- Typography: Segoe UI Variable, Fluent type ramp ----
+  # ---- Typography: Segoe UI Variable (Windows), Open Sans elsewhere, Fluent type ramp ----
+  # Open Sans needs the Google Fonts CSS resource (see README); without it, system-ui is used.
   # Body 14/20 regular, Body Strong 14/20 semibold, Caption 12/16, Subtitle 20/28 semibold.
-  ha-font-family-body: '"Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Roboto, "Noto Sans", sans-serif'
-  ha-font-family-heading: '"Segoe UI Variable Display", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Roboto, "Noto Sans", sans-serif'
+  ha-font-family-body: '"Segoe UI Variable Text", "Segoe UI", "Open Sans", system-ui, sans-serif'
+  ha-font-family-heading: '"Segoe UI Variable Display", "Segoe UI", "Open Sans", system-ui, sans-serif'
   ha-font-family-longform: var(--ha-font-family-body)
   ha-font-family-code: '"Cascadia Mono", "Cascadia Code", Consolas, ui-monospace, monospace'
   # Pre-2025 names, still read by some cards and custom cards

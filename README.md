@@ -39,6 +39,9 @@ The theme is called `Fluentha2` so it can sit next to the original
 2. HACS (or the Marketplace on 2026.11+) > three-dot menu > **Custom repositories** > add
    `https://github.com/MartinZikmund/Fluentha2`, category **Theme**.
 3. Download **Fluentha2**, then run the `frontend.reload_themes` action (or restart).
+4. Optional but recommended on non-Windows devices: add the **Open Sans** font as a dashboard resource.
+   Settings > Dashboards > three-dot menu > **Resources** > Add resource:
+   `https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap`, type **Stylesheet**.
 
 ### Manual
 
@@ -57,8 +60,8 @@ Copy `themes/fluentha2.yaml` into `/config/themes/` and reload themes.
 
 ## Notes
 
-- Segoe UI Variable is only on Windows 11. Elsewhere it falls back to the system UI font (Roboto on Android,
-  SF on Apple devices), which still looks clean.
+- Font stack: `"Segoe UI Variable", "Segoe UI", "Open Sans", system-ui`. Windows keeps Segoe; Android, Linux and
+  Apple devices get Open Sans when the Google Fonts resource above is registered, otherwise their system font.
 - There's no real Mica (wallpaper-tinted blur) in a browser; the base colour is the solid Mica fallback Windows uses.
 
 ## License
