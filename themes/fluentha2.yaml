@@ -1,4 +1,4 @@
-# Fluentha - Windows 11 / WinUI 3 Fluent look for Home Assistant (2026.x frontend).
+# Fluentha2 - Windows 11 / WinUI 3 Fluent look for Home Assistant (2026.x frontend).
 # One theme, light + dark via `modes:`. Pure CSS variables - no card-mod needed.
 # Values are WinUI 3 theme resources (Microsoft.UI.Xaml ThemeResources / Fluent 2 tokens);
 # the WinUI name is noted where the mapping isn't obvious.
@@ -74,6 +74,9 @@ Fluentha2:
   ha-slider-track-size: 4px
   ha-progress-bar-track-height: 4px
   ha-dialog-scrim-backdrop-filter: none
+  # Denser sections grid: 4 columns fit a 1280px tablet (HA default min is 320px)
+  ha-view-sections-column-min-width: 280px
+  ha-view-sections-column-gap: 16px
   # Fluent "decelerate" easing
   wa-transition-easing: cubic-bezier(0, 0, 0, 1)
 
