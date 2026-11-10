@@ -347,3 +347,354 @@ Fluentha2:
       sidebar-menu-button-background-color: "#f3f3f3"
       sidebar-menu-button-text-color: "#1b1b1b"
       sidebar-border-color: rgba(0, 0, 0, 0.06)
+
+# Same theme with Windows 11 Acrylic cards: translucent, blurred material over a view background image.
+# Uses HA's native --ha-card-backdrop-filter; pair it with a view `background:` image.
+Fluentha2 Acrylic:
+  # ---- Typography: Segoe UI Variable (Windows), Open Sans elsewhere, Fluent type ramp ----
+  # Open Sans needs the Google Fonts CSS resource (see README); without it, system-ui is used.
+  # Body 14/20 regular, Body Strong 14/20 semibold, Caption 12/16, Subtitle 20/28 semibold.
+  ha-font-family-body: '"Segoe UI Variable Text", "Segoe UI", "Open Sans", system-ui, sans-serif'
+  ha-font-family-heading: '"Segoe UI Variable Display", "Segoe UI", "Open Sans", system-ui, sans-serif'
+  ha-font-family-longform: var(--ha-font-family-body)
+  ha-font-family-code: '"Cascadia Mono", "Cascadia Code", Consolas, ui-monospace, monospace'
+  # Pre-2025 names, still read by some cards and custom cards
+  primary-font-family: var(--ha-font-family-body)
+  paper-font-common-base_-_font-family: var(--ha-font-family-body)
+  paper-font-common-code_-_font-family: var(--ha-font-family-code)
+  paper-font-body1_-_font-family: var(--ha-font-family-body)
+  paper-font-subhead_-_font-family: var(--ha-font-family-body)
+  paper-font-headline_-_font-family: var(--ha-font-family-heading)
+  paper-font-caption_-_font-family: var(--ha-font-family-body)
+  paper-font-title_-_font-family: var(--ha-font-family-heading)
+  mdc-typography-font-family: var(--ha-font-family-body)
+  mdc-typography-button-font-family: var(--ha-font-family-body)
+  mdc-typography-body1-font-family: var(--ha-font-family-body)
+  mdc-typography-body2-font-family: var(--ha-font-family-body)
+  ha-font-weight-medium: "600"      # Fluent has no 500; "strong" is semibold
+  ha-font-weight-heading: "600"
+  ha-line-height-normal: "1.43"     # 20/14
+  # Heading card = Subtitle; card header = Subtitle
+  ha-heading-card-title-font-size: 20px
+  ha-heading-card-title-font-weight: "600"
+  ha-heading-card-title-line-height: 28px
+  ha-heading-card-subtitle-font-size: 14px
+  ha-heading-card-subtitle-font-weight: "400"
+  ha-card-header-font-size: 20px
+  ha-card-header-font-family: var(--ha-font-family-heading)
+  # Tile = Body Strong name + Caption state
+  ha-tile-info-primary-font-size: 14px
+  ha-tile-info-primary-font-weight: "600"
+  ha-tile-info-primary-line-height: 20px
+  ha-tile-info-primary-letter-spacing: "0"
+  ha-tile-info-secondary-font-size: 12px
+  ha-tile-info-secondary-font-weight: "400"
+  ha-tile-info-secondary-line-height: 16px
+  ha-tile-info-secondary-letter-spacing: "0"
+  ha-dialog-header-title-font-size: 20px
+  ha-dialog-header-title-font-weight: "600"
+  ha-dialog-header-title-line-height: 28px
+
+  # ---- Shape: ControlCornerRadius 4px, OverlayCornerRadius 8px ----
+  ha-card-border-radius: 8px
+  ha-card-border-width: 1px
+  ha-card-box-shadow: none
+  # Windows 11 Acrylic: blur + saturation behind the card (native HA variable, no card-mod)
+  ha-card-backdrop-filter: blur(30px) saturate(150%)
+  ha-card-features-border-radius: 4px
+  ha-section-border-radius: 8px
+  ha-dialog-border-radius: 8px
+  wa-panel-border-radius: 8px
+  ha-button-border-radius: 4px
+  ha-button-box-shadow: none
+  wa-form-control-border-radius: 4px
+  ha-input-search-border-radius: 4px
+  ha-tooltip-border-radius: 4px
+  ha-tooltip-font-size: 12px
+  ha-badge-border-radius: 4px
+  ha-checkbox-border-radius: 4px
+  # ToggleSwitch 40x20, 12px knob
+  ha-switch-width: 40px
+  ha-switch-size: 20px
+  ha-switch-thumb-size: 12px
+  ha-switch-thumb-box-shadow: none
+  ha-entity-toggle-switch-width: 40px
+  ha-entity-toggle-switch-size: 20px
+  ha-entity-toggle-switch-thumb-size: 12px
+  ha-slider-track-size: 4px
+  ha-progress-bar-track-height: 4px
+  ha-dialog-scrim-backdrop-filter: none
+  # Denser sections grid: 4 columns fit a 1280px tablet (HA default min is 320px)
+  ha-view-sections-column-min-width: 280px
+  ha-view-sections-column-gap: 16px
+  # Fluent "decelerate" easing
+  wa-transition-easing: cubic-bezier(0, 0, 0, 1)
+
+  modes:
+    dark:
+      # ---- Acrylic: translucent cards over the view background ----
+      ha-card-background: rgba(44, 44, 44, 0.55)
+      card-background-color: rgba(44, 44, 44, 0.55)
+      ha-card-border-color: rgba(255, 255, 255, 0.09)
+      lovelace-background: transparent
+      primary-background-color: "#202020"
+      # ---- Surfaces: Mica base + card layer ----
+      secondary-background-color: "#1c1c1c"     # SolidBackgroundFillColorSecondary
+      clear-background-color: "#2b2b2b"
+      divider-color: rgba(255, 255, 255, 0.08)         # DividerStrokeColorDefault
+      ha-dialog-surface-background: "#2c2c2c"           # SolidBackgroundFillColorTertiary
+      ha-tooltip-background-color: "#2c2c2c"
+      ha-section-background-color: transparent
+      markdown-code-background-color: "#1c1c1c"
+      table-row-background-color: "#2b2b2b"
+      table-row-alternative-background-color: "#282828"
+      data-table-background-color: "#2b2b2b"
+      input-fill-color: rgba(255, 255, 255, 0.06)      # ControlFillColorDefault
+      ha-color-form-background: rgba(255, 255, 255, 0.06)
+      ha-color-form-background-hover: rgba(255, 255, 255, 0.08)
+
+      # ---- Text: TextFillColorPrimary/Secondary/Tertiary/Disabled ----
+      primary-text-color: "#ffffff"
+      secondary-text-color: rgba(255, 255, 255, 0.786)
+      tertiary-text-color: rgba(255, 255, 255, 0.545)
+      disabled-text-color: rgba(255, 255, 255, 0.363)
+      text-primary-color: "#000000"            # TextOnAccentFillColorPrimary
+      text-accent-color: "#000000"
+      ha-tile-info-primary-color: "#ffffff"
+      ha-tile-info-secondary-color: rgba(255, 255, 255, 0.786)
+      ha-heading-card-title-color: "#ffffff"
+      ha-heading-card-subtitle-color: rgba(255, 255, 255, 0.786)
+      ha-color-text-primary: "#ffffff"
+      ha-color-text-secondary: rgba(255, 255, 255, 0.786)
+
+      # ---- Accent: Windows default blue, AccentFillColorDefault (dark) ----
+      primary-color: "#60cdff"
+      accent-color: "#60cdff"
+      dark-primary-color: "#0091f8"
+      light-primary-color: "#99ebff"
+      rgb-primary-color: 96, 205, 255
+      rgb-accent-color: 96, 205, 255
+      ha-color-primary-40: "#0091f8"
+      ha-color-primary-50: "#60cdff"
+      ha-color-primary-60: "#99ebff"
+      ha-color-fill-primary-loud-resting: "#60cdff"
+      ha-color-fill-primary-loud-hover: "#5ab9e6"
+      ha-color-fill-primary-loud-active: "#55a6cc"
+      ha-color-on-primary-loud: "#000000"
+      ha-color-fill-primary-quiet-resting: rgba(96, 205, 255, 0.12)
+      ha-color-fill-primary-quiet-hover: rgba(96, 205, 255, 0.18)
+      ha-color-focus: "#ffffff"                # FocusStrokeColorOuter
+      link-text-color: "#99ebff"
+      ha-color-text-link: "#99ebff"
+
+      # ---- System colours: SystemFillColorCritical/Caution/Success ----
+      error-color: "#ff99a4"
+      warning-color: "#fce100"
+      success-color: "#6ccb5f"
+      info-color: "#60cdff"
+
+      # ---- State colours: neutral off, accent on, warm lights ----
+      state-icon-color: rgba(255, 255, 255, 0.786)
+      state-inactive-color: rgba(255, 255, 255, 0.363)
+      state-active-color: "#60cdff"
+      state-light-active-color: "#ffc463"     # warm amber "glow"
+      state-light-on-color: "#ffc463"
+      state-switch-active-color: "#60cdff"
+      state-input_boolean-active-color: "#60cdff"
+      state-fan-active-color: "#60cdff"
+      state-cover-active-color: "#60cdff"
+      state-vacuum-active-color: "#60cdff"
+      state-media_player-active-color: "#60cdff"
+      state-person-home-color: "#6ccb5f"
+      state-device_tracker-home-color: "#6ccb5f"
+      state-lock-locked-color: "#6ccb5f"
+      state-lock-unlocked-color: "#fce100"
+      state-lock-open-color: "#fce100"
+      state-lock-jammed-color: "#ff99a4"
+      state-alarm_control_panel-armed_away-color: "#6ccb5f"
+      state-alarm_control_panel-armed_home-color: "#6ccb5f"
+      state-alarm_control_panel-armed_night-color: "#6ccb5f"
+      state-alarm_control_panel-armed_vacation-color: "#6ccb5f"
+      state-alarm_control_panel-disarmed-color: rgba(255, 255, 255, 0.786)
+      state-alarm_control_panel-triggered-color: "#ff99a4"
+      state-binary_sensor-garage_door-on-color: "#fce100"
+      state-binary_sensor-door-on-color: "#fce100"
+      state-binary_sensor-window-on-color: "#fce100"
+      state-binary_sensor-problem-on-color: "#ff99a4"
+      state-sensor-battery-low-color: "#ff99a4"
+      state-sensor-battery-medium-color: "#fce100"
+      state-sensor-battery-high-color: "#6ccb5f"
+      state-weather-sunny-color: "#ffc463"
+      state-weather-partlycloudy-color: "#ffc463"
+      state-weather-cloudy-color: rgba(255, 255, 255, 0.786)
+
+      # ---- Controls: ToggleSwitch, Slider ----
+      switch-checked-color: "#60cdff"
+      switch-checked-button-color: "#000000"
+      switch-checked-track-color: "#60cdff"
+      switch-unchecked-button-color: rgba(255, 255, 255, 0.786)
+      switch-unchecked-track-color: rgba(0, 0, 0, 0.1)
+      ha-switch-background-color: rgba(0, 0, 0, 0.1)
+      ha-switch-border-color: rgba(255, 255, 255, 0.545)
+      ha-switch-thumb-background-color: rgba(255, 255, 255, 0.786)
+      ha-switch-checked-background-color: "#60cdff"
+      ha-switch-checked-border-color: "#60cdff"
+      ha-switch-checked-thumb-background-color: "#000000"
+      ha-slider-thumb-color: "#60cdff"
+      ha-slider-indicator-color: "#60cdff"
+      ha-slider-track-color: rgba(255, 255, 255, 0.545)
+      ha-slider-background: rgba(255, 255, 255, 0.545)
+      mdc-theme-primary: "#60cdff"
+      mdc-theme-on-primary: "#000000"
+      mdc-theme-surface: "#2c2c2c"
+      mdc-dialog-scrim-color: rgba(0, 0, 0, 0.3)
+
+      # ---- Chrome: header + sidebar sit on Mica, no shadow ----
+      app-header-background-color: "#202020"
+      app-header-text-color: "#ffffff"
+      app-header-border-bottom: 1px solid rgba(255, 255, 255, 0.07)
+      app-header-selection-bar-color: "#60cdff"
+      app-header-edit-background-color: "#2b2b2b"
+      app-header-edit-text-color: "#ffffff"
+      sidebar-background-color: "#202020"
+      sidebar-text-color: "#ffffff"
+      sidebar-icon-color: rgba(255, 255, 255, 0.786)
+      sidebar-selected-text-color: "#ffffff"
+      sidebar-selected-icon-color: "#60cdff"
+      sidebar-menu-button-background-color: "#202020"
+      sidebar-menu-button-text-color: "#ffffff"
+      sidebar-border-color: rgba(255, 255, 255, 0.07)
+
+    light:
+      # ---- Acrylic: translucent cards over the view background ----
+      ha-card-background: rgba(252, 252, 252, 0.6)
+      card-background-color: rgba(252, 252, 252, 0.6)
+      ha-card-border-color: rgba(0, 0, 0, 0.06)
+      lovelace-background: transparent
+      primary-background-color: "#f3f3f3"
+      # ---- Surfaces ----
+      secondary-background-color: "#eeeeee"
+      clear-background-color: "#fbfbfb"
+      divider-color: rgba(0, 0, 0, 0.08)
+      ha-dialog-surface-background: "#f9f9f9"
+      ha-tooltip-background-color: "#f9f9f9"
+      ha-section-background-color: transparent
+      markdown-code-background-color: "#eeeeee"
+      table-row-background-color: "#fbfbfb"
+      table-row-alternative-background-color: "#f6f6f6"
+      data-table-background-color: "#fbfbfb"
+      input-fill-color: rgba(255, 255, 255, 0.7)
+      ha-color-form-background: rgba(255, 255, 255, 0.7)
+      ha-color-form-background-hover: rgba(249, 249, 249, 0.5)
+
+      # ---- Text ----
+      primary-text-color: "#1b1b1b"            # rgba(0,0,0,.894)
+      secondary-text-color: "#5f5f5f"          # rgba(0,0,0,.62)
+      tertiary-text-color: "#8a8a8a"           # rgba(0,0,0,.447)
+      disabled-text-color: "#a0a0a0"
+      text-primary-color: "#ffffff"
+      text-accent-color: "#ffffff"
+      ha-tile-info-primary-color: "#1b1b1b"
+      ha-tile-info-secondary-color: "#5f5f5f"
+      ha-heading-card-title-color: "#1b1b1b"
+      ha-heading-card-subtitle-color: "#5f5f5f"
+      ha-color-text-primary: "#1b1b1b"
+      ha-color-text-secondary: "#5f5f5f"
+
+      # ---- Accent (light) ----
+      primary-color: "#005fb8"
+      accent-color: "#005fb8"
+      dark-primary-color: "#003e92"
+      light-primary-color: "#0078d4"
+      rgb-primary-color: 0, 95, 184
+      rgb-accent-color: 0, 95, 184
+      ha-color-primary-40: "#005fb8"
+      ha-color-primary-50: "#0078d4"
+      ha-color-primary-60: "#4cc2ff"
+      ha-color-fill-primary-loud-resting: "#005fb8"
+      ha-color-fill-primary-loud-hover: "#196ebf"
+      ha-color-fill-primary-loud-active: "#317ec6"
+      ha-color-on-primary-loud: "#ffffff"
+      ha-color-fill-primary-quiet-resting: rgba(0, 95, 184, 0.08)
+      ha-color-fill-primary-quiet-hover: rgba(0, 95, 184, 0.14)
+      ha-color-focus: "#000000"
+      link-text-color: "#003e92"
+      ha-color-text-link: "#003e92"
+
+      # ---- System colours ----
+      error-color: "#c42b1c"
+      warning-color: "#9d5d00"
+      success-color: "#0f7b0f"
+      info-color: "#005fb8"
+
+      # ---- State colours ----
+      state-icon-color: "#5f5f5f"
+      state-inactive-color: "#a0a0a0"
+      state-active-color: "#005fb8"
+      state-light-active-color: "#d38300"
+      state-light-on-color: "#d38300"
+      state-switch-active-color: "#005fb8"
+      state-input_boolean-active-color: "#005fb8"
+      state-fan-active-color: "#005fb8"
+      state-cover-active-color: "#005fb8"
+      state-vacuum-active-color: "#005fb8"
+      state-media_player-active-color: "#005fb8"
+      state-person-home-color: "#0f7b0f"
+      state-device_tracker-home-color: "#0f7b0f"
+      state-lock-locked-color: "#0f7b0f"
+      state-lock-unlocked-color: "#9d5d00"
+      state-lock-open-color: "#9d5d00"
+      state-lock-jammed-color: "#c42b1c"
+      state-alarm_control_panel-armed_away-color: "#0f7b0f"
+      state-alarm_control_panel-armed_home-color: "#0f7b0f"
+      state-alarm_control_panel-armed_night-color: "#0f7b0f"
+      state-alarm_control_panel-armed_vacation-color: "#0f7b0f"
+      state-alarm_control_panel-disarmed-color: "#5f5f5f"
+      state-alarm_control_panel-triggered-color: "#c42b1c"
+      state-binary_sensor-garage_door-on-color: "#9d5d00"
+      state-binary_sensor-door-on-color: "#9d5d00"
+      state-binary_sensor-window-on-color: "#9d5d00"
+      state-binary_sensor-problem-on-color: "#c42b1c"
+      state-sensor-battery-low-color: "#c42b1c"
+      state-sensor-battery-medium-color: "#9d5d00"
+      state-sensor-battery-high-color: "#0f7b0f"
+      state-weather-sunny-color: "#d38300"
+      state-weather-partlycloudy-color: "#d38300"
+      state-weather-cloudy-color: "#5f5f5f"
+
+      # ---- Controls ----
+      switch-checked-color: "#005fb8"
+      switch-checked-button-color: "#ffffff"
+      switch-checked-track-color: "#005fb8"
+      switch-unchecked-button-color: "#5f5f5f"
+      switch-unchecked-track-color: rgba(0, 0, 0, 0.024)
+      ha-switch-background-color: rgba(0, 0, 0, 0.024)
+      ha-switch-border-color: rgba(0, 0, 0, 0.447)
+      ha-switch-thumb-background-color: "#5f5f5f"
+      ha-switch-checked-background-color: "#005fb8"
+      ha-switch-checked-border-color: "#005fb8"
+      ha-switch-checked-thumb-background-color: "#ffffff"
+      ha-slider-thumb-color: "#005fb8"
+      ha-slider-indicator-color: "#005fb8"
+      ha-slider-track-color: rgba(0, 0, 0, 0.447)
+      ha-slider-background: rgba(0, 0, 0, 0.447)
+      mdc-theme-primary: "#005fb8"
+      mdc-theme-on-primary: "#ffffff"
+      mdc-theme-surface: "#f9f9f9"
+      mdc-dialog-scrim-color: rgba(0, 0, 0, 0.3)
+
+      # ---- Chrome ----
+      app-header-background-color: "#f3f3f3"
+      app-header-text-color: "#1b1b1b"
+      app-header-border-bottom: 1px solid rgba(0, 0, 0, 0.06)
+      app-header-selection-bar-color: "#005fb8"
+      app-header-edit-background-color: "#fbfbfb"
+      app-header-edit-text-color: "#1b1b1b"
+      sidebar-background-color: "#f3f3f3"
+      sidebar-text-color: "#1b1b1b"
+      sidebar-icon-color: "#5f5f5f"
+      sidebar-selected-text-color: "#1b1b1b"
+      sidebar-selected-icon-color: "#005fb8"
+      sidebar-menu-button-background-color: "#f3f3f3"
+      sidebar-menu-button-text-color: "#1b1b1b"
+      sidebar-border-color: rgba(0, 0, 0, 0.06)

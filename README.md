@@ -27,6 +27,27 @@ The theme is called `Fluentha2` so it can sit next to the original
 | Accent | `#60cdff` | `#005fb8` |
 | Lights on | `#ffc463` | `#d38300` |
 
+## Fluentha2 Acrylic
+
+A second theme in the same file: cards become Windows 11 **Acrylic** - a translucent tint with a 30px blur and
+150 % saturation of whatever sits behind them. It uses Home Assistant's own `--ha-card-backdrop-filter` variable,
+so it still needs **no card-mod**. Give the view a background image so there is something to blur:
+
+```yaml
+views:
+  - title: Tablet
+    theme: Fluentha2 Acrylic
+    background:
+      image: /local/wallpaper.jpg
+      size: cover
+      alignment: center
+      attachment: fixed
+      opacity: 60   # the theme's base colour shows through, which darkens the image
+```
+
+Backdrop blur is GPU work on every repaint. It is smooth on desktops and recent tablets; on older or low-power
+devices (cheap wall tablets, old Fire tablets) stick to plain `Fluentha2`.
+
 ## Install
 
 ### HACS (custom repository)
