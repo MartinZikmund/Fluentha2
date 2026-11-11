@@ -1,0 +1,10 @@
+{
+  "domain": "wallpaper",
+  "name": "Wallpaper (no-cache static files)",
+  "codeowners": [],
+  "dependencies": ["http"],
+  "documentation": "https://github.com/MartinZikmund/Fluentha2/tree/main/extras/daily-wallpaper",
+  "iot_class": "local_push",
+  "requirements": [],
+  "version": "1.0.0"
+}

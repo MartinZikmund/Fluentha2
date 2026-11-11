@@ -1,0 +1,26 @@
+# Downloads today's Bing image every morning to /config/www/wallpaper/bing.jpg,
+# served without long-term caching at /wallpaper/bing.jpg by the `wallpaper` integration.
+# Needs the `downloader` integration with its download folder set to /config/www.
+alias: Daily Bing wallpaper
+triggers:
+  - trigger: time
+    at: "05:00:00"
+  - trigger: homeassistant
+    event: start
+  - trigger: state
+    entity_id: sensor.bing_wallpaper_url
+    not_to: [unavailable, unknown]
+conditions:
+  - condition: not
+    conditions:
+      - condition: state
+        entity_id: sensor.bing_wallpaper_url
+        state: [unavailable, unknown]
+actions:
+  - action: downloader.download_file
+    data:
+      url: "https://www.bing.com{{ states('sensor.bing_wallpaper_url') | replace('1920x1080', 'UHD') }}"
+      subdir: wallpaper
+      filename: bing.jpg
+      overwrite: true
+mode: single

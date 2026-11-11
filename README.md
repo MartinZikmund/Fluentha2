@@ -45,6 +45,10 @@ views:
       opacity: 60   # the theme's base colour shows through, which darkens the image
 ```
 
+Want a fresh photo every morning? [`extras/daily-wallpaper`](extras/daily-wallpaper) sets up the Bing image of the
+day with its photo credit. It includes a tiny `wallpaper` integration that serves the image without `/local`'s
+31-day browser cache, which would otherwise keep showing yesterday's picture on most devices.
+
 Backdrop blur is GPU work on every repaint. It is smooth on desktops and recent tablets; on older or low-power
 devices (cheap wall tablets, old Fire tablets) stick to plain `Fluentha2`.
 
